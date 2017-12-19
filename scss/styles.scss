@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600|Roboto+Slab:300,400');
+@import "../assets/bootstrap4/scss/bootstrap";
+
+$theme-colors: (
+  primary-text: #104451,
+  primary-text-dark: #344044,
+  primary-text-light: #90A1A5,
+  light-grey: #F5F5F5
+);
+
+@function theme-color($key) {
+  @if map-has-key($theme-colors, $key) {
+    @return map-get($theme-colors, $key);
+  }
+
+  @warn "Unknown '#{$key} in $theme-colors.";
+  @return null;
+}
+
+.light{
+  font-weight: 100;
+}
+
+.serif-font{
+  font-family: 'Roboto Slab', serif;
+}
+
+.sans-serif-font{
+  font-family: 'Barlow', sans-serif;
+}
+
+hr{
+  color: theme-color(primary-text-light);
+}
+
+html{
+  font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  @extend .sans-serif-font;
+}
+
+body{
+  @extend .serif-font;  
+  color: theme-color(primary-text);
+  font-weight: 300;
+  // background-image: URL('../../assets/img/v2/iw-intro8.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+p{
+  font-size: 1rem;
+  &.large{
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+}
+
+.row {
+    margin-right: 0!important;
+    margin-left: 0!important;
+}
+
+.iw-section{
+  @extend .row;
+  @extend .justify-content-center;
+  header{
+    @extend .row;
+    @extend .justify-content-center;
+    .header-content{
+      @extend .col-9;
+      text-align: left;
+    }
+  }
+  .content-wrapper{
+    @extend .col-10;
+  }
+  margin-top: 100px;
+  text-align: left;
+}
+
+.project-thumbnail{
+  border: 2px solid theme-color(light-grey);
+  height: 500px;
+  width: 100%;
+  margin-top: 2rem;
+}
+#main-nav{
+  padding-top: 50px;
+  a{
+    color: theme-color(primary-text-light);
+  }
+  li.active{
+    a{
+      color: theme-color(primary-text);
+    }
+  }
+}
+
+#intro{
+  &::before{
+    content: '';
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: URL('../../assets/img/v2/iw-intro.jpg');
+  }
+  @extend .iw-section;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+  h1{
+    @extend .sans-serif-font;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1.1;
+    padding-bottom: 1.3rem;
+  }
+  h3{
+    @extend .serif-font;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    letter-spacing: 1px;
+  }
+  p{
+    padding-top: 1rem;
+  }
+}
+
+#works{
+  @extend .iw-section;
+}
+
+#services{
+  @extend .iw-section;
+}
+
+#testimonials{
+  @extend .iw-section;
+}
+
+#our-team{
+  @extend .iw-section;
+}
+
+//responsive settings
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+  .iw-section{
+    header{
+      .header-content{
+        text-align: center;
+      }
+    }
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 22px;
+  }
+  .iw-section{
+    header{
+      .header-content{
+        text-align: center;
+      }
+    }
+    text-align: center;
+  }
+}
