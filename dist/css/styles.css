@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600|Roboto+Slab:300,400");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:200,300,700|Roboto+Slab:300");
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -629,7 +629,7 @@ pre {
   flex: 0 0 91.6666666667%;
   max-width: 91.6666666667%; }
 
-.col-12 {
+.col-12, #testimonials .content-wrapper {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -6354,14 +6354,14 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
-.light {
+.light-weight {
   font-weight: 100; }
 
-.serif-font, body, #intro h3 {
+.serif-font, #testimonials .content-wrapper .carousel .carousel-inner h1 {
   font-family: 'Roboto Slab', serif; }
 
-.sans-serif-font, h1, h2, h3, h4, h5, h6, #intro h1 {
-  font-family: 'Barlow', sans-serif; }
+.sans-serif-font, body, h1, h2, h3, h4, h5, h6, #testimonials .content-wrapper .carousel .carousel-inner p {
+  font-family: 'Fira Sans', sans-serif; }
 
 hr {
   color: #90A1A5; }
@@ -6370,10 +6370,14 @@ html {
   font-size: 16px; }
 
 body {
-  color: #104451;
+  color: #4C7F8D;
   font-weight: 300;
   background-repeat: no-repeat;
   background-size: contain; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #104451;
+  font-weight: 700; }
 
 p {
   font-size: 1rem; }
@@ -6381,15 +6385,38 @@ p {
     font-size: 1.2rem;
     line-height: 1.6; }
 
+main a {
+  position: relative;
+  color: #104451; }
+  main a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0.5em;
+    background-color: #218ca6;
+    opacity: 0.3;
+    left: 0;
+    right: 0;
+    width: 100%; }
+  main a:hover {
+    color: #104451; }
+    main a:hover::after {
+      opacity: 0; }
+
 .row, .iw-section, #intro, #works, #services, #testimonials, #our-team, .iw-section header, #intro header, #works header, #services header, #testimonials header, #our-team header {
   margin-right: 0 !important;
   margin-left: 0 !important; }
+
+.container-fluid {
+  padding: 0; }
 
 .iw-section, #intro, #works, #services, #testimonials, #our-team {
   margin-top: 100px;
   text-align: left; }
   .iw-section header .header-content, #intro header .header-content, #works header .header-content, #services header .header-content, #testimonials header .header-content, #our-team header .header-content {
     text-align: left; }
+    .iw-section header .header-content h2, #intro header .header-content h2, #works header .header-content h2, #services header .header-content h2, #testimonials header .header-content h2, #our-team header .header-content h2 {
+      padding-bottom: 1rem; }
 
 .project-thumbnail {
   border: 2px solid #F5F5F5;
@@ -6415,20 +6442,39 @@ p {
     left: 0px;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background-image: URL("../../assets/img/v2/iw-intro.jpg"); }
+    z-index: -1; }
   #intro h1 {
-    font-weight: 400;
+    font-weight: 200;
     font-size: 4rem;
-    line-height: 1.1;
-    padding-bottom: 1.3rem; }
-  #intro h3 {
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    letter-spacing: 1px; }
-  #intro p {
-    padding-top: 1rem; }
+    letter-spacing: 1px;
+    color: #104451;
+    padding-bottom: 1.5rem; }
+
+#services .content-wrapper {
+  padding-top: 3rem;
+  text-align: left; }
+  #services .content-wrapper .row, #services .content-wrapper .iw-section, #services .content-wrapper #intro, #services .content-wrapper #works, #services .content-wrapper #services, #services .content-wrapper #testimonials, #services .content-wrapper #our-team, #services .content-wrapper .iw-section header, .iw-section #services .content-wrapper header, #services .content-wrapper #intro header, #intro #services .content-wrapper header, #services .content-wrapper #works header, #works #services .content-wrapper header, #services .content-wrapper header, #services .content-wrapper #testimonials header, #testimonials #services .content-wrapper header, #services .content-wrapper #our-team header, #our-team #services .content-wrapper header {
+    min-height: 400px; }
+
+#testimonials .content-wrapper {
+  background: #F56E5E;
+  height: 100%;
+  margin-left: -15px;
+  margin-right: -15px; }
+  #testimonials .content-wrapper .carousel .carousel-inner {
+    width: 70%;
+    margin: 0 auto;
+    min-height: 500px; }
+    #testimonials .content-wrapper .carousel .carousel-inner h1 {
+      font-size: 1.6rem;
+      font-weight: 300; }
+    #testimonials .content-wrapper .carousel .carousel-inner p {
+      font-size: 1rem;
+      font-weight: 100; }
+    #testimonials .content-wrapper .carousel .carousel-inner .carousel-caption {
+      top: 150px;
+      bottom: auto;
+      color: #344044; }
 
 @media (min-width: 576px) {
   html {

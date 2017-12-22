@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600|Roboto+Slab:300,400');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:200,300,700|Roboto+Slab:300');
 @import "../assets/bootstrap4/scss/bootstrap";
 
 $theme-colors: (
   primary-text: #104451,
   primary-text-dark: #344044,
-  primary-text-light: #90A1A5,
-  light-grey: #F5F5F5
+  primary-text-light: #4C7F8D,
+  primary-text-muted: #90A1A5,
+  border-color: #F5F5F5,
+  hilite-background-color: #F56E5E
 );
 
 @function theme-color($key) {
@@ -17,7 +19,7 @@ $theme-colors: (
   @return null;
 }
 
-.light{
+.light-weight{
   font-weight: 100;
 }
 
@@ -26,28 +28,31 @@ $theme-colors: (
 }
 
 .sans-serif-font{
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 hr{
-  color: theme-color(primary-text-light);
+  color: theme-color(primary-text-muted);
 }
 
 html{
   font-size: 16px;
 }
 
-h1,h2,h3,h4,h5,h6{
-  @extend .sans-serif-font;
-}
-
 body{
-  @extend .serif-font;  
-  color: theme-color(primary-text);
+  @extend .sans-serif-font;  
+  //background-color: #FFFDF6;
+  color: theme-color(primary-text-light);
   font-weight: 300;
   // background-image: URL('../../assets/img/v2/iw-intro8.jpg');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+h1,h2,h3,h4,h5,h6{
+  @extend .sans-serif-font;
+  color: theme-color(primary-text);
+  font-weight: 700;
 }
 
 p{
@@ -58,9 +63,38 @@ p{
   }
 }
 
+main{
+  a{
+    position: relative;
+    color: theme-color(primary-text);
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 0.5em;
+      background-color: lighten(theme-color(primary-text), 20%);
+      opacity: 0.3;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+    &:hover{
+      color: theme-color(primary-text);
+      &::after{
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
 .row {
-    margin-right: 0!important;
-    margin-left: 0!important;
+  margin-right: 0!important;
+  margin-left: 0!important;
+}
+
+.container-fluid{
+  padding: 0;
 }
 
 .iw-section{
@@ -72,6 +106,9 @@ p{
     .header-content{
       @extend .col-9;
       text-align: left;
+      h2{
+        padding-bottom: 1rem;
+      }
     }
   }
   .content-wrapper{
@@ -82,7 +119,7 @@ p{
 }
 
 .project-thumbnail{
-  border: 2px solid theme-color(light-grey);
+  border: 2px solid theme-color(border-color);
   height: 500px;
   width: 100%;
   margin-top: 2rem;
@@ -90,7 +127,7 @@ p{
 #main-nav{
   padding-top: 50px;
   a{
-    color: theme-color(primary-text-light);
+    color: theme-color(primary-text-muted);
   }
   li.active{
     a{
@@ -108,28 +145,18 @@ p{
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: URL('../../assets/img/v2/iw-intro.jpg');
+    //background-image: URL('../../assets/img/v2/iw-intro.jpg');
   }
   @extend .iw-section;
   padding-top: 80px;
   padding-bottom: 50px;
   margin-top: 30px;
   h1{
-    @extend .sans-serif-font;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 4rem;
-    line-height: 1.1;
-    padding-bottom: 1.3rem;
-  }
-  h3{
-    @extend .serif-font;
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.6;
     letter-spacing: 1px;
-  }
-  p{
-    padding-top: 1rem;
+    color: theme-color(primary-text);
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -139,10 +166,46 @@ p{
 
 #services{
   @extend .iw-section;
+  .content-wrapper{
+    padding-top: 3rem;
+    text-align: left;
+    .row{
+      min-height: 400px;
+    }
+  }
 }
 
 #testimonials{
   @extend .iw-section;
+  .content-wrapper{
+    @extend .col-12;
+    background: theme-color(hilite-background-color);
+    height: 100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    .carousel{
+      .carousel-inner{
+        width: 70%;
+        margin: 0 auto;
+        min-height: 500px;
+        h1{
+          @extend .serif-font;
+          font-size: 1.6rem;
+          font-weight: 300;
+        }
+        p{
+          @extend .sans-serif-font;
+          font-size: 1rem;
+          font-weight: 100;
+        }
+        .carousel-caption{
+          top:150px;
+          bottom: auto;
+          color: theme-color(primary-text-dark);
+        }
+      }
+    }
+  }
 }
 
 #our-team{
