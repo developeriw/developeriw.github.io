@@ -7,9 +7,9 @@ $theme-colors: (
   primary-text-light: #4C7F8D,
   primary-text-muted: #90A1A5,
   border-color: #F5F5F5,
-  hilite-background-color: #F56E5E
+  hilite-background-color: #ff897c 
 );
-
+//#F56E5E
 @function theme-color($key) {
   @if map-has-key($theme-colors, $key) {
     @return map-get($theme-colors, $key);
@@ -108,6 +108,9 @@ main{
       text-align: left;
       h2{
         padding-bottom: 1rem;
+        &.slim{
+          font-weight: 200;
+        }
       }
     }
   }
@@ -210,6 +213,25 @@ main{
 
 #our-team{
   @extend .iw-section;
+}
+
+#lets-work{
+  @extend .iw-section;
+  .content-wrapper{
+    @extend .col-12;
+  }
+  header{
+    .header-content{
+      @extend .col-12;
+      h2{
+        padding-bottom: 0;
+      }
+    }
+  }
+  
+  background-color: theme-color(hilite-background-color);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 //responsive settings
