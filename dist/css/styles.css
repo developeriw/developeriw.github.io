@@ -564,7 +564,7 @@ pre {
     padding-left: 0; }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .iw-section header .header-content, #intro header .header-content, #works header .header-content, #services header .header-content, #testimonials header .header-content, #our-team header .header-content, #lets-work header .header-content, .col-10, .iw-section .content-wrapper, #intro .content-wrapper, #works .content-wrapper, #services .content-wrapper, #testimonials .content-wrapper, #our-team .content-wrapper, #lets-work .content-wrapper, .col-11, .col-12, .col,
-.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .team-member, .team-details, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
@@ -760,7 +760,7 @@ pre {
     flex: 0 0 91.6666666667%;
     max-width: 91.6666666667%; }
 
-  .col-sm-12 {
+  .col-sm-12, .team-member, .team-details {
     flex: 0 0 100%;
     max-width: 100%; }
 
@@ -861,7 +861,7 @@ pre {
     flex: 0 0 25%;
     max-width: 25%; }
 
-  .col-md-4 {
+  .col-md-4, .team-member {
     flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%; }
 
@@ -873,7 +873,7 @@ pre {
     flex: 0 0 50%;
     max-width: 50%; }
 
-  .col-md-7 {
+  .col-md-7, .team-details {
     flex: 0 0 58.3333333333%;
     max-width: 58.3333333333%; }
 
@@ -6478,12 +6478,47 @@ main a {
       bottom: auto;
       color: #344044; }
 
+.team-details {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
 #lets-work {
   background-color: #ff897c;
   padding-top: 100px;
   padding-bottom: 100px; }
   #lets-work header .header-content h2 {
     padding-bottom: 0; }
+
+.inverted {
+  background-color: #104451;
+  color: #7bd0e5; }
+  .inverted a {
+    color: #d0eef6; }
+  .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
+    color: white; }
+  .inverted hr {
+    border-color: #0e3d48; }
+
+footer {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  footer .footer-contact {
+    padding-top: 20px; }
+    footer .footer-contact span {
+      font-size: 1.2rem;
+      font-weight: 200;
+      padding-top: 5px;
+      display: block; }
+  footer .made-in-india {
+    padding-top: 30px;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: #0d3742; }
+    footer .made-in-india .heart {
+      color: #ff897c; }
 
 @media (min-width: 576px) {
   html {

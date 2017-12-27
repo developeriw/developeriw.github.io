@@ -215,6 +215,18 @@ main{
   @extend .iw-section;
 }
 
+.team-member{
+  @extend .col-sm-12;
+  @extend .col-md-4;
+}
+
+.team-details{
+  @extend .col-sm-12;
+  @extend .col-md-7;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #lets-work{
   @extend .iw-section;
   .content-wrapper{
@@ -234,6 +246,45 @@ main{
   padding-bottom: 100px;
 }
 
+.inverted{
+  background-color: theme-color(primary-text);
+  color: lighten(theme-color(primary-text),50%);
+  a{
+    color: lighten(theme-color(primary-text),70%);
+  }
+  h1,h2,h3,h4,h5,h6{
+    color: white;
+  }
+  hr{
+    border-color: darken(theme-color(primary-text),2%);
+  }
+}
+
+footer{
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .footer-contact{
+    padding-top: 20px;
+    span{
+      font-size: 1.2rem;
+      font-weight: 200;
+      padding-top: 5px;
+      display: block;
+    }
+  }
+  .made-in-india{
+    padding-top: 30px;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: darken(theme-color(primary-text),3.5%);
+    .heart{
+      color: theme-color(hilite-background-color);
+    }
+  }
+}
 //responsive settings
 
 @include media-breakpoint-up(sm) {
