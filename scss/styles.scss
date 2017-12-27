@@ -281,7 +281,7 @@ footer{
     letter-spacing: 0.15rem;
     color: darken(theme-color(primary-text),3.5%);
     .heart{
-      color: theme-color(hilite-background-color);
+      color: lighten(theme-color(hilite-background-color),5%);
     }
   }
 }
