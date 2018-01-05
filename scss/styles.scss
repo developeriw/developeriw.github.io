@@ -7,7 +7,8 @@ $theme-colors: (
   primary-text-light: #4C7F8D,
   primary-text-muted: #90A1A5,
   border-color: #F5F5F5,
-  hilite-background-color: #ff897c 
+  hilite-background-color: #ff897c,
+  hilite-background-color-extreme-light: #FFF7F6
 );
 //#F56E5E
 @function theme-color($key) {
@@ -64,7 +65,7 @@ p{
 }
 
 main{
-  a{
+  a.iw-link{
     position: relative;
     color: theme-color(primary-text);
     &::after{
@@ -181,10 +182,11 @@ main{
   @extend .iw-section;
   .content-wrapper{
     @extend .col-12;
-    background: lighten(theme-color(hilite-background-color),24%);
+    background: theme-color(hilite-background-color-extreme-light);
     height: 100%;
     margin-left: -15px;
     margin-right: -15px;
+    margin-top: 50px; 
     .carousel{
       .carousel-inner{
         width: 70%;
@@ -311,10 +313,11 @@ footer{
     text-transform: uppercase;
     font-size: 0.6rem;
     font-weight: 700;
-    letter-spacing: 0.15rem;
-    color: darken(theme-color(primary-text),3.5%);
+    letter-spacing: 0.1rem;
+    color: transparentize(lighten(theme-color(primary-text),5%),0.5);
+    text-shadow: 1px 2px 3px darken(theme-color(primary-text),3%), 0 0 0 lighten(theme-color(primary-text),10%), 1px 2px 3px lighten(theme-color(primary-text),3%);
     .heart{
-      color: lighten(theme-color(hilite-background-color),5%);
+      color: transparentize(theme-color(hilite-background-color),0.4);
     }
   }
 }

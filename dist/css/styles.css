@@ -6385,10 +6385,10 @@ p {
     font-size: 1.3rem;
     line-height: 1.6; }
 
-main a {
+main a.iw-link {
   position: relative;
   color: #104451; }
-  main a::after {
+  main a.iw-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -6398,9 +6398,9 @@ main a {
     left: 0;
     right: 0;
     width: 100%; }
-  main a:hover {
+  main a.iw-link:hover {
     color: #104451; }
-    main a:hover::after {
+    main a.iw-link:hover::after {
       opacity: 0; }
 
 .row, .iw-section, #intro, #works, #services, #testimonials, #our-team, #lets-work, .iw-section header, #intro header, #works header, #services header, #testimonials header, #our-team header, #lets-work header {
@@ -6458,10 +6458,11 @@ main a {
     min-height: 400px; }
 
 #testimonials .content-wrapper {
-  background: #fff7f6;
+  background: #FFF7F6;
   height: 100%;
   margin-left: -15px;
-  margin-right: -15px; }
+  margin-right: -15px;
+  margin-top: 50px; }
   #testimonials .content-wrapper .carousel .carousel-inner {
     width: 70%;
     margin: 0 auto;
@@ -6544,10 +6545,11 @@ footer {
     text-transform: uppercase;
     font-size: 0.6rem;
     font-weight: 700;
-    letter-spacing: 0.15rem;
-    color: #0d3742; }
+    letter-spacing: 0.1rem;
+    color: rgba(20, 86, 102, 0.5);
+    text-shadow: 1px 2px 3px #0d3944, 0 0 0 #18687c, 1px 2px 3px #134f5e; }
     footer .made-in-india .heart {
-      color: #ffa096; }
+      color: rgba(255, 137, 124, 0.6); }
 
 @media (min-width: 576px) {
   html {
