@@ -182,7 +182,7 @@ main{
   @extend .iw-section;
   .content-wrapper{
     @extend .col-12;
-    background: theme-color(hilite-background-color);
+    background: lighten(theme-color(hilite-background-color),24%);
     height: 100%;
     margin-left: -15px;
     margin-right: -15px;
