@@ -56,9 +56,9 @@ h1,h2,h3,h4,h5,h6{
 }
 
 p{
-  font-size: 1rem;
+  font-size: 1.3rem;
   &.large{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
   }
 }
@@ -123,7 +123,6 @@ main{
 
 .project-thumbnail{
   border: 2px solid theme-color(border-color);
-  height: 500px;
   width: 100%;
   margin-top: 2rem;
 }
@@ -235,6 +234,8 @@ main{
   header{
     .header-content{
       @extend .col-12;
+      padding-left: 30px;
+      padding-right: 30px;
       h2{
         padding-bottom: 0;
       }
@@ -244,6 +245,36 @@ main{
   background-color: theme-color(hilite-background-color);
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+#say-hello-btn{
+  &:after{
+    all: unset;
+  }
+  display: block;
+  text-decoration: none;
+  background-color: theme-color(primary-text);
+  color: theme-color(hilite-background-color);
+  border: 1px solid theme-color(primary-text);
+  width: 250px;
+  height: 60px;
+  margin: auto;
+  margin-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  text-align: center;
+
+  &:hover{
+    background-color: #5EF5A6;
+    color: theme-color(primary-text);
+    border: 1px solid theme-color(primary-text);
+  }
+
+  transition: background-color 0.5s;
+  transition-timing-function: cubic-bezier(.1,.04,0,1.01);
 }
 
 .inverted{
@@ -264,6 +295,8 @@ footer{
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
   .footer-contact{
     padding-top: 20px;
     span{
@@ -297,6 +330,15 @@ footer{
   html {
     font-size: 20px;
   }
+
+  p{
+    font-size: 1.1rem;
+    &.large{
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+  }
+
   .iw-section{
     header{
       .header-content{
@@ -311,6 +353,7 @@ footer{
   html {
     font-size: 22px;
   }
+
   .iw-section{
     header{
       .header-content{
